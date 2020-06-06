@@ -52,6 +52,8 @@ namespace Hazel
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
+
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	protected:
 		MouseButtonEvent(int button)
 			: m_Button(button) {}
@@ -59,7 +61,7 @@ namespace Hazel
 		int m_Button;
 	};
 
-	class HAZEL_API MouseButtonPressedEvent : MouseButtonEvent
+	class HAZEL_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
